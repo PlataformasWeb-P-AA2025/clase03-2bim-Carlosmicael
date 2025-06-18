@@ -26,8 +26,7 @@ def listadoEstudiantes(request):
     # se agregará la información que estará disponible
     # en el template
     titulo = "Listado de estudiantes de mi aplicación"
-    informacion_template = {'estudiantes': estudiantes,
-    'numero_estudiantes': len(estudiantes), 'mititulo': titulo}
+    informacion_template = {'estudiantes': estudiantes,'numero_estudiantes': len(estudiantes), 'mititulo': titulo}
     return render(request, 'listadoEstudiantes.html', informacion_template)
 
 
@@ -41,7 +40,5 @@ def listadoEstudiantesDos(request):
     # en la variable tipo diccionario llamada informacion_template
     # se agregará la información que estará disponible
     # en el template
-    informacion_template = {'estudiantes': estudiantes,
-    'numero_estudiantes': len(estudiantes),
-    'mis_numeros_telefonicos': mis_numeros_telefonicos}
+    informacion_template = {'estudiantes': estudiantes,'numero_estudiantes': len(estudiantes),'mis_numeros_telefonicos': mis_numeros_telefonicos}
     return render(request, 'listadoEstudiantesDos.html', informacion_template)
