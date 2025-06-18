@@ -89,3 +89,54 @@ def eliminar_estudiante(request, id):
     estudiante = Estudiante.objects.get(pk=id)
     estudiante.delete()
     return redirect(index)
+
+
+def indexpais(request):
+    """
+        Listar los registros del modelo Estudiante,
+        obtenidos de la base de datos.
+    """
+    # a través del ORM de django se obtiene
+    # los registros de la entidad; el listado obtenido
+    # se lo almacena en una variable llamada
+    # estudiantes
+    pais = Pais.objects.all()
+    # en la variable tipo diccionario llamada informacion_template
+    # se agregará la información que estará disponible
+    # en el template
+    informacion_template = {'pais': pais, 'numero_pais': len(pais)}
+    return render(request, 'paisIndex.html', informacion_template)
+
+
+def obtenerpais(request, id):
+    """
+        Listar los registros del modelo Estudiante,
+        obtenidos de la base de datos.
+    """
+    # a través del ORM de django se obtiene
+    # los registros de la entidad; el listado obtenido
+    # se lo almacena en una variable llamada
+    # estudiantes
+    pais = Pais.objects.get(pk=id)
+    # en la variable tipo diccionario llamada informacion_template
+    # se agregará la información que estará disponible
+    # en el template
+    informacion_template = {'pais': pais}
+    return render(request, 'obtenerpais.html', informacion_template)
+
+
+def crearpais(request):
+    """
+    """
+    print(request)
+    if request.method=='POST':
+        formulario = PaisForm(request.POST)
+        print(formulario.errors)
+        if formulario.is_valid():
+            formulario.save()
+            return redirect(indexpais)
+    else:
+        formulario = PaisForm()
+    diccionario = {'formulario': formulario}
+
+    return render(request, 'crearPais.html', diccionario)
