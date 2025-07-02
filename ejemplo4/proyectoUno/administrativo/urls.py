@@ -8,7 +8,7 @@ from . import views
 
 
 urlpatterns = [
-        #path('', views.index, name='index'),
+        path('', views.index, name='index'),
         path('estudiante/<int:id>', views.obtener_estudiante,
             name='obtener_estudiante'),
         path('crear/estudiante', views.crear_estudiante,
@@ -20,8 +20,7 @@ urlpatterns = [
 
 
 
-
-        path('', views.indexpais, name='paisIndex'),
+        #path('', views.indexpais, name='paisIndex'),
         path('pais/<int:id>', views.obtenerpais,
             name='obtenerpais'),
         path('crear/pais', views.crearpais,

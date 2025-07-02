@@ -91,6 +91,14 @@ def eliminar_estudiante(request, id):
     return redirect(index)
 
 
+
+
+
+
+
+
+
+
 def indexpais(request):
     """
         Listar los registros del modelo Estudiante,

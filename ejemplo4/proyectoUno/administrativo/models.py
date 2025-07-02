@@ -8,7 +8,7 @@ class Pais(models.Model):
     numero_habitantes = models.PositiveBigIntegerField()
 
     def __str__(self):
-        return f"{self.nombre} - {self.capital} - {self.numero_provincias} - {self.numero_habitantes}"
+        return f"{self.nombre} {self.capital} {self.numero_provincias} {self.numero_habitantes}"
 
 class Estudiante(models.Model):
     nombre = models.CharField(max_length=30)
