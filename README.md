@@ -5,7 +5,7 @@
 ![alt text](image.png)
 
 la expresion e.numerotelefonico_set.all el _set hace referencia si no encuentra una relacion en la entidad 
-simplemente si no existe la relacion pasa de largo y no genera error.
+simplemente si no existe la relacion pasa de largo y no genera error..
 
 ### 25 junio 2025
 
